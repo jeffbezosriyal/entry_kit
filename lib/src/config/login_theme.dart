@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
 
-/// Defines the visual styling for the EntryKit screens.
+/// Defines the visual properties for the EntryKit widgets.
 ///
-/// Use this to match the login screens to your app's brand colors and shapes.
+/// Use this class to match the authentication screens to your brand's
+/// color palette and border styling.
 class LoginTheme {
-  /// The background color of the entire screen.
+  /// The background color of the scaffold.
   final Color? backgroundColor;
 
   /// The primary accent color, used for buttons and loading indicators.
   final Color? primaryColor;
 
-  /// The background color of the text input fields.
+  /// The fill color for text input fields.
   final Color? inputFillColor;
 
-  /// The text style for the screen title (e.g., "Welcome Back").
+  /// The text style for the main screen titles (e.g. "Welcome").
   final TextStyle? titleStyle;
 
-  /// The text style for input fields.
+  /// The text style for text inside input fields.
   final TextStyle? inputTextStyle;
 
-  /// The border radius for input fields and buttons. Defaults to 8.0.
+  /// The border radius for buttons and input fields. Defaults to 8.0.
   final double inputBorderRadius;
 
-  /// Creates a custom theme configuration.
+  /// Creates a configuration for the login UI theme.
   const LoginTheme({
     this.backgroundColor,
     this.primaryColor,

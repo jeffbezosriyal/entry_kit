@@ -9,41 +9,45 @@ import '../logic/login_cubit.dart';
 import '../logic/login_state.dart';
 import '../logic/input_validators.dart';
 
-/// A complete Login Screen widget that handles email/password and social auth.
+/// A complete, pre-built Login Screen.
 ///
-/// It uses the provided [authRepository] to perform the actual login logic.
+/// This widget handles:
+/// * Email/Password authentication.
+/// * Social Authentication (Google, Apple).
+/// * Navigation callbacks for Sign Up and Forgot Password.
+/// * Loading states and error handling via [Bloc].
 class LoginView extends StatelessWidget {
-  /// The implementation of your backend logic.
+  /// The backend implementation for authentication.
   final AuthRepository authRepository;
 
-  /// Visual styling configuration.
+  /// Visual theme configuration.
   final LoginTheme? theme;
 
-  /// Text labels and error messages.
+  /// Text labels configuration for localization.
   final LoginTexts? texts;
 
-  /// Configuration for password validation rules.
+  /// Rules for password validation (e.g. length, special chars).
   final PasswordConfig? passwordConfig;
 
-  /// An optional widget to display at the top (e.g., your app logo).
+  /// A widget displayed at the top of the form (e.g. Logo).
   final Widget? logo;
 
-  /// Whether to show the Google Sign-In button. Defaults to `false`.
+  /// Whether to display the Google Sign-In button. Defaults to false.
   final bool enableGoogleAuth;
 
-  /// Whether to show the Apple Sign-In button. Defaults to `false`.
+  /// Whether to display the Apple Sign-In button. Defaults to false.
   final bool enableAppleAuth;
 
-  /// Callback triggered when login is successful.
+  /// Callback triggered upon successful login.
   final VoidCallback? onLoginSuccess;
 
-  /// Callback triggered when the "Forgot Password" button is pressed.
+  /// Callback triggered when the user taps "Forgot Password".
   final VoidCallback? onForgotPassword;
 
-  /// Callback triggered when the "Sign Up" button is pressed.
+  /// Callback triggered when the user taps "Sign Up".
   final VoidCallback? onSignUp;
 
-  /// Creates a LoginView.
+  /// Creates a [LoginView] instance.
   const LoginView({
     super.key,
     required this.authRepository,
@@ -113,7 +117,7 @@ class _LoginForm extends StatefulWidget {
   final VoidCallback? onSignUp;
 
   const _LoginForm({
-    Key? key,
+    super.key,
     this.theme,
     required this.texts,
     required this.passwordConfig,
@@ -122,7 +126,7 @@ class _LoginForm extends StatefulWidget {
     required this.enableAppleAuth,
     this.onForgotPassword,
     this.onSignUp,
-  }) : super(key: key);
+  });
 
   @override
   State<_LoginForm> createState() => _LoginFormState();
@@ -137,9 +141,9 @@ class _LoginFormState extends State<_LoginForm> {
     if (_formKey.currentState!.validate()) {
       FocusScope.of(context).unfocus();
       context.read<LoginCubit>().loginSubmitted(
-            _emailController.text.trim(),
-            _passwordController.text,
-          );
+        _emailController.text.trim(),
+        _passwordController.text,
+      );
     }
   }
 
@@ -277,7 +281,7 @@ class _LoginFormState extends State<_LoginForm> {
                   onPressed: _onGooglePressed,
                   icon: SvgPicture.asset(
                     'assets/google_logo.svg',
-                    package: 'entry_kit', // <--- Crucial!
+                    package: 'entry_kit',
                     height: 24,
                     width: 24,
                   ),
@@ -310,7 +314,7 @@ class _LoginFormState extends State<_LoginForm> {
                   ),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16),
-                    backgroundColor: Colors.black, // Standard Apple Black
+                    backgroundColor: Colors.black,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(

@@ -1,8 +1,8 @@
-/// EntryKit is a production-ready authentication UI package for Flutter.
+/// EntryKit is a production-ready, unopinionated authentication UI package.
 ///
-/// It provides pre-built [LoginView], [SignUpView], and [ForgotPasswordView] screens
-/// that are backend-agnostic. You simply implement the [AuthRepository] interface
-/// to connect it to Firebase, Supabase, or any custom API.
+/// It decouples the UI (Presentation Layer) from the Backend (Logic Layer) via
+/// the [AuthRepository] contract. This allows you to use any backend (Firebase,
+/// Supabase, REST) with the same pre-built widgets.
 library entry_kit;
 
 export 'src/contract/auth_repository.dart';
