@@ -1,3 +1,6 @@
+## 0.0.3
+*Added public API documentation.
+
 ## 0.0.2
 
 * Added Dartdoc comments to public API to improve pub score.
