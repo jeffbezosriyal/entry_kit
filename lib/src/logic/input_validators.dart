@@ -29,7 +29,8 @@ class InputValidators {
       return 'Password must contain a number';
     }
 
-    if (config.requireSpecialChar && !value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+    if (config.requireSpecialChar &&
+        !value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
       return 'Password must contain a special character';
     }
 

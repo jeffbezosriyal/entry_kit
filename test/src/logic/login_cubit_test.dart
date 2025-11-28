@@ -28,9 +28,9 @@ void main() {
       build: () {
         // Arrange: Mock the repo to return success (void)
         when(() => mockAuthRepository.signIn(
-          email: any(named: 'email'),
-          password: any(named: 'password'),
-        )).thenAnswer((_) async {});
+              email: any(named: 'email'),
+              password: any(named: 'password'),
+            )).thenAnswer((_) async {});
         return loginCubit;
       },
       act: (cubit) => cubit.loginSubmitted('test@test.com', 'password'),
@@ -45,9 +45,9 @@ void main() {
       build: () {
         // Arrange: Mock the repo to throw an error
         when(() => mockAuthRepository.signIn(
-          email: any(named: 'email'),
-          password: any(named: 'password'),
-        )).thenThrow(Exception('Invalid credentials'));
+              email: any(named: 'email'),
+              password: any(named: 'password'),
+            )).thenThrow(Exception('Invalid credentials'));
         return loginCubit;
       },
       act: (cubit) => cubit.loginSubmitted('test@test.com', 'wrong'),
@@ -55,8 +55,7 @@ void main() {
         const LoginState(status: LoginStatus.submitting),
         const LoginState(
             status: LoginStatus.failure,
-            errorMessage: 'Exception: Invalid credentials'
-        ),
+            errorMessage: 'Exception: Invalid credentials'),
       ],
     );
 

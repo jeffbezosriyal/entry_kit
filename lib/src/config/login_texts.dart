@@ -3,15 +3,15 @@ class LoginTexts {
   final String passwordLabel;
   final String confirmPasswordLabel; // <--- NEW
   final String loginButton;
-  final String createAccountButton;  // <--- NEW
+  final String createAccountButton; // <--- NEW
   final String forgotPassword;
   final String noAccount;
-  final String alreadyHaveAccount;   // <--- NEW
+  final String alreadyHaveAccount; // <--- NEW
   final String signUp;
-  final String signIn;               // <--- NEW
+  final String signIn; // <--- NEW
   final String emailError;
   final String passwordError;
-  final String passwordMatchError;   // <--- NEW
+  final String passwordMatchError; // <--- NEW
   final String googleButton;
   final String appleButton; // <--- NEW
   final String orSeparator;
@@ -33,7 +33,6 @@ class LoginTexts {
     this.sendResetLinkButton = 'Send Reset Link',
     this.backToLogin = 'Back to Login',
     this.resetLinkSentMessage = 'Reset link sent! Check your email.',
-
     this.noAccount = "Don't have an account? ",
     this.alreadyHaveAccount = 'Already have an account? ',
     this.signUp = 'Sign Up',

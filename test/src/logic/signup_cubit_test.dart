@@ -26,9 +26,9 @@ void main() {
       'emits [submitting, success] when signupSubmitted succeeds',
       build: () {
         when(() => mockAuthRepository.signUp(
-          email: any(named: 'email'),
-          password: any(named: 'password'),
-        )).thenAnswer((_) async {});
+              email: any(named: 'email'),
+              password: any(named: 'password'),
+            )).thenAnswer((_) async {});
         return signUpCubit;
       },
       act: (cubit) => cubit.signupSubmitted('new@test.com', 'password'),
@@ -42,9 +42,9 @@ void main() {
       'emits [submitting, failure] when signupSubmitted fails',
       build: () {
         when(() => mockAuthRepository.signUp(
-          email: any(named: 'email'),
-          password: any(named: 'password'),
-        )).thenThrow(Exception('Email already in use'));
+              email: any(named: 'email'),
+              password: any(named: 'password'),
+            )).thenThrow(Exception('Email already in use'));
         return signUpCubit;
       },
       act: (cubit) => cubit.signupSubmitted('taken@test.com', 'password'),

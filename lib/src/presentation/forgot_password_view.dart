@@ -33,7 +33,8 @@ class ForgotPasswordView extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: theme?.primaryColor ?? Colors.black),
+            icon: Icon(Icons.arrow_back,
+                color: theme?.primaryColor ?? Colors.black),
             onPressed: onBackToLogin,
           ),
         ),
@@ -50,7 +51,8 @@ class ForgotPasswordView extends StatelessWidget {
               // Show success message
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(texts?.resetLinkSentMessage ?? "Reset link sent!"),
+                  content:
+                      Text(texts?.resetLinkSentMessage ?? "Reset link sent!"),
                   backgroundColor: Colors.green,
                 ),
               );
@@ -99,8 +101,8 @@ class _ForgotPasswordFormState extends State<_ForgotPasswordForm> {
     if (_formKey.currentState!.validate()) {
       FocusScope.of(context).unfocus();
       context.read<ForgotPasswordCubit>().submitResetRequest(
-        _emailController.text.trim(),
-      );
+            _emailController.text.trim(),
+          );
     }
   }
 

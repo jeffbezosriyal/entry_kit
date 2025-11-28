@@ -5,7 +5,8 @@ import 'forgot_password_state.dart';
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   final AuthRepository _authRepository;
 
-  ForgotPasswordCubit(this._authRepository) : super(const ForgotPasswordState());
+  ForgotPasswordCubit(this._authRepository)
+      : super(const ForgotPasswordState());
 
   Future<void> submitResetRequest(String email) async {
     emit(state.copyWith(status: ForgotPasswordStatus.submitting));

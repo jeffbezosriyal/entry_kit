@@ -61,9 +61,9 @@ void main() {
     testWidgets('submits when passwords match', (tester) async {
       // Mock the success response
       when(() => mockRepo.signUp(
-        email: any(named: 'email'),
-        password: any(named: 'password'),
-      )).thenAnswer((_) async {});
+            email: any(named: 'email'),
+            password: any(named: 'password'),
+          )).thenAnswer((_) async {});
 
       await pumpSignUpView(tester);
 
@@ -79,9 +79,9 @@ void main() {
       expect(find.text('NO_MATCH'), findsNothing);
       // And verify repo was called
       verify(() => mockRepo.signUp(
-        email: 'test@test.com',
-        password: 'Password123!',
-      )).called(1);
+            email: 'test@test.com',
+            password: 'Password123!',
+          )).called(1);
     });
   });
 }

@@ -14,7 +14,8 @@ void main() {
   });
 
   // Helper to pump the widget wrapped in MaterialApp
-  Future<void> pumpLoginView(WidgetTester tester, {
+  Future<void> pumpLoginView(
+    WidgetTester tester, {
     bool google = false,
     bool apple = false,
   }) async {
@@ -91,7 +92,8 @@ void main() {
       await tester.pumpAndSettle();
 
       // 3. Now we expect the length error
-      expect(find.text('Password must be at least 6 characters'), findsOneWidget);
+      expect(
+          find.text('Password must be at least 6 characters'), findsOneWidget);
     });
   });
 }
