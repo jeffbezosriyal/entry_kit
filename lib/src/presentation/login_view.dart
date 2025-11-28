@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../contract/auth_repository.dart';
 import '../config/login_theme.dart';
 import '../config/login_texts.dart';
@@ -7,33 +8,55 @@ import '../config/password_config.dart';
 import '../logic/login_cubit.dart';
 import '../logic/login_state.dart';
 import '../logic/input_validators.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+/// A complete Login Screen widget that handles email/password and social auth.
+///
+/// It uses the provided [authRepository] to perform the actual login logic.
 class LoginView extends StatelessWidget {
+  /// The implementation of your backend logic.
   final AuthRepository authRepository;
+
+  /// Visual styling configuration.
   final LoginTheme? theme;
+
+  /// Text labels and error messages.
   final LoginTexts? texts;
+
+  /// Configuration for password validation rules.
   final PasswordConfig? passwordConfig;
+
+  /// An optional widget to display at the top (e.g., your app logo).
   final Widget? logo;
+
+  /// Whether to show the Google Sign-In button. Defaults to `false`.
   final bool enableGoogleAuth;
-  final bool enableAppleAuth; // <--- NEW
+
+  /// Whether to show the Apple Sign-In button. Defaults to `false`.
+  final bool enableAppleAuth;
+
+  /// Callback triggered when login is successful.
   final VoidCallback? onLoginSuccess;
+
+  /// Callback triggered when the "Forgot Password" button is pressed.
   final VoidCallback? onForgotPassword;
+
+  /// Callback triggered when the "Sign Up" button is pressed.
   final VoidCallback? onSignUp;
 
+  /// Creates a LoginView.
   const LoginView({
-    Key? key,
+    super.key,
     required this.authRepository,
     this.theme,
     this.texts,
     this.passwordConfig,
     this.logo,
     this.enableGoogleAuth = false,
-    this.enableAppleAuth = false, // <--- Default false
+    this.enableAppleAuth = false,
     this.onLoginSuccess,
     this.onForgotPassword,
     this.onSignUp,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
