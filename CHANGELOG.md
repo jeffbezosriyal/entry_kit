@@ -1,5 +1,5 @@
 ## 0.0.3
-*Added public API documentation.
+* Added public API documentation.
 
 ## 0.0.2
 
