@@ -1,3 +1,6 @@
+## 0.0.4
+* Added the example file.
+
 ## 0.0.3
 * Added public API documentation.
 
