@@ -84,7 +84,6 @@ class _SignUpForm extends StatefulWidget {
   final VoidCallback? onLoginTap;
 
   const _SignUpForm({
-    super.key,
     this.theme,
     required this.texts,
     required this.passwordConfig,

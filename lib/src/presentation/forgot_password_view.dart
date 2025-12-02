@@ -83,7 +83,6 @@ class _ForgotPasswordForm extends StatefulWidget {
   final Widget? logo;
 
   const _ForgotPasswordForm({
-    super.key,
     this.theme,
     required this.texts,
     this.logo,
