@@ -1,29 +1,35 @@
 name: entry_kit
-description: A production-ready, unopinionated authentication UI package for Flutter. Decouples UI from Logic with Google & Apple Auth support. # Must be 60-180 characters.
+description: A production-ready authentication UI package. Decouples UI from logic with interfaces for Google & Apple auth.
 version: 0.0.6
-homepage: https://github.com/jeffbezosriyal
-repository: https://github.com/jeffbezosriyal/entry_kit # Critical for verification points
+homepage: https://github.com/jeffbezosriyal/entry_kit
+repository: https://github.com/jeffbezosriyal/entry_kit
 issue_tracker: https://github.com/jeffbezosriyal/entry_kit/issues
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
-  flutter: ">=3.0.0"
+  flutter: ">=3.3.0" # Bumped minimum to match modern lints
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.3
-  equatable: ^2.0.5
-  google_sign_in: ^6.1.5
-  sign_in_with_apple: ^6.1.0
-  flutter_svg: ^2.0.10
+  # Core Logic
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.7
+
+  # UI Assets
+  flutter_svg: ^2.0.17 # Latest patch
+
+  # WARNING: These limit platform support to Android/iOS/macOS/Web
+  # Remove these if you want 140/140 points (Windows/Linux support).
+  google_sign_in: ^6.2.2
+  sign_in_with_apple: ^6.1.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  bloc_test: ^9.1.5
-  mocktail: ^1.0.1
-  flutter_lints: ^3.0.0 # Mandatory for score
+  bloc_test: ^9.1.7
+  mocktail: ^1.0.4
+  flutter_lints: ^5.0.0 # CRITICAL: Upgrade to latest lints
 
 flutter:
   assets:
