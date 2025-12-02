@@ -117,7 +117,7 @@ class _LoginForm extends StatefulWidget {
   final VoidCallback? onSignUp;
 
   const _LoginForm({
-    // Removed super.key to fix unused_element_parameter warning
+    super.key, // This was missing in your previous upload, adding it fixes the warning
     this.theme,
     required this.texts,
     required this.passwordConfig,

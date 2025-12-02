@@ -21,17 +21,17 @@ class SignUpView extends StatelessWidget {
   final VoidCallback? onLoginTap;
 
   const SignUpView({
-    Key? key,
+    super.key,
     required this.authRepository,
     this.theme,
     this.texts,
     this.passwordConfig,
     this.logo,
     this.enableGoogleAuth = false,
-    this.enableAppleAuth = false, // <--- Default false
+    this.enableAppleAuth = false,
     this.onSignUpSuccess,
     this.onLoginTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class _SignUpForm extends StatefulWidget {
   final VoidCallback? onLoginTap;
 
   const _SignUpForm({
-    Key? key,
+    super.key,
     this.theme,
     required this.texts,
     required this.passwordConfig,
@@ -92,7 +92,7 @@ class _SignUpForm extends StatefulWidget {
     required this.enableGoogleAuth,
     required this.enableAppleAuth,
     this.onLoginTap,
-  }) : super(key: key);
+  });
 
   @override
   State<_SignUpForm> createState() => _SignUpFormState();

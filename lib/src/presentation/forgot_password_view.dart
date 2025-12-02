@@ -15,13 +15,13 @@ class ForgotPasswordView extends StatelessWidget {
   final VoidCallback? onBackToLogin;
 
   const ForgotPasswordView({
-    Key? key,
+    super.key,
     required this.authRepository,
     this.theme,
     this.texts,
     this.logo,
     this.onBackToLogin,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -83,11 +83,11 @@ class _ForgotPasswordForm extends StatefulWidget {
   final Widget? logo;
 
   const _ForgotPasswordForm({
-    Key? key,
+    super.key,
     this.theme,
     required this.texts,
     this.logo,
-  }) : super(key: key);
+  });
 
   @override
   State<_ForgotPasswordForm> createState() => _ForgotPasswordFormState();
