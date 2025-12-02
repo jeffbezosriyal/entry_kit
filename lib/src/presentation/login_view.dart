@@ -140,9 +140,9 @@ class _LoginFormState extends State<_LoginForm> {
     if (_formKey.currentState!.validate()) {
       FocusScope.of(context).unfocus();
       context.read<LoginCubit>().loginSubmitted(
-        _emailController.text.trim(),
-        _passwordController.text,
-      );
+            _emailController.text.trim(),
+            _passwordController.text,
+          );
     }
   }
 

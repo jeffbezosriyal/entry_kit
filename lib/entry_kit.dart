@@ -3,7 +3,7 @@
 /// It decouples the UI (Presentation Layer) from the Backend (Logic Layer) via
 /// the [AuthRepository] contract. This allows you to use any backend (Firebase,
 /// Supabase, REST) with the same pre-built widgets.
-library entry_kit;
+library;
 
 export 'src/contract/auth_repository.dart';
 export 'src/config/login_theme.dart';

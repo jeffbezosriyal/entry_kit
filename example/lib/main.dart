@@ -34,7 +34,8 @@ class AuthCoordinator extends StatefulWidget {
 
 class _AuthCoordinatorState extends State<AuthCoordinator> {
   // Simple state to toggle screens for the demo
-  String _currentView = 'login'; // Options: login, signup, forgot_password, home
+  String _currentView =
+      'login'; // Options: login, signup, forgot_password, home
 
   final MockAuthRepository _repository = MockAuthRepository();
 
@@ -106,7 +107,8 @@ class _AuthCoordinatorState extends State<AuthCoordinator> {
           enableAppleAuth: false, // Hidden for this demo
           logo: const _DemoLogo(),
           onSignUp: () => setState(() => _currentView = 'signup'),
-          onForgotPassword: () => setState(() => _currentView = 'forgot_password'),
+          onForgotPassword: () =>
+              setState(() => _currentView = 'forgot_password'),
           onLoginSuccess: () {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text("Login Successful!")),
@@ -131,7 +133,8 @@ class _DemoLogo extends StatelessWidget {
         color: Colors.indigo.shade50,
         shape: BoxShape.circle,
       ),
-      child: const Icon(Icons.lock_person_rounded, size: 40, color: Colors.indigo),
+      child:
+          const Icon(Icons.lock_person_rounded, size: 40, color: Colors.indigo),
     );
   }
 }
