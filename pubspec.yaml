@@ -1,6 +1,6 @@
 name: entry_kit
 description: A production-ready authentication UI package. Decouples UI from logic with interfaces for Google & Apple auth.
-version: 0.0.11 # Bumped for publication
+version: 0.1.0 # Bumped for publication
 homepage: https://github.com/jeffbezosriyal/entry_kit
 repository: https://github.com/jeffbezosriyal/entry_kit
 issue_tracker: https://github.com/jeffbezosriyal/entry_kit/issues

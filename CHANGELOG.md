@@ -1,3 +1,8 @@
+## 0.1.0
+* Fixed `dangling_library_doc_comments` and `unnecessary_library_name` lints in `entry_kit.dart`.
+* Fixed missing dependencies in `example/pubspec.yaml`.
+* Updated dependencies to latest stable versions.
+
 ## 0.0.9
 * Minor changes
 
