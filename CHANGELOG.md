@@ -1,3 +1,6 @@
+## 0.0.6
+* GitHub links updated
+
 ## 0.0.5
 * Major changes in constructors.
 

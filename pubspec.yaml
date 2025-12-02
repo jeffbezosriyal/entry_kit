@@ -1,6 +1,6 @@
 name: entry_kit
 description: A production-ready, unopinionated authentication UI package for Flutter. Decouples UI from Logic with Google & Apple Auth support. # Must be 60-180 characters.
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/jeffbezosriyal
 repository: https://github.com/jeffbezosriyal/entry_kit # Critical for verification points
 issue_tracker: https://github.com/jeffbezosriyal/entry_kit/issues
