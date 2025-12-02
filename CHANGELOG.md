@@ -1,3 +1,6 @@
+## 0.0.5
+* Major changes in constructors.
+
 ## 0.0.4
 * Added the example file.
 
